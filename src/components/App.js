@@ -1,15 +1,35 @@
 import React, { Component } from 'react';
-import '../App.css';
+
+
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import '../index.css';
+import Nav from './Nav';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
-      </div>
+        <BrowserRouter>
+          <div>
+            <header className="header"/>
+            <div className="container">
+              <Nav/>
+            </div>
+          </div>
+        </BrowserRouter>
     );
   }
 }
 
 export default App;
+
+
+/*
+ <BrowserRouter>
+ <div>
+ <header className="header"/>
+ <div className="container">
+ <Nav/>
+ </div>
+ </div>
+ </BrowserRouter>
+ */
