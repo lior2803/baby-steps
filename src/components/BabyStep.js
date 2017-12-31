@@ -33,7 +33,7 @@ function FriendsList(props) {
     )
 }
 
-function Step(props) {
+function StepContent(props) {
     var paragraphs = Body[props.num].split('<p>');
     return (
         <div>
@@ -83,7 +83,7 @@ class BabyStep extends Component {
         return(
             <div className="baby-step-div">
                 <img src={title} alt="baby-step-title"/>
-                <Step num={this.state.selectedStep}/>
+                <StepContent num={this.state.selectedStep}/>
                 {this.state.friendsList ? <FriendsList list={this.state.friendsList} num={this.state.selectedStep}/> : <p></p>}
             </div>
         )
