@@ -86,46 +86,6 @@ p {
   color: #65686f;
 }
 
-/*.cont {*/
-  /*height: 100%;*/
-  /*display: -ms-flexbox;*/
-  /*display: -webkit-box;*/
-  /*display: -moz-box;*/
-  /*display: flex;*/
-
-  /*-ms-flex-direction: row;*/
-  /*-webkit-box-orient: horizontal;*/
-  /*-moz-box-orient: horizontal;*/
-  /*-ms-box-orient: horizontal;*/
-  /*box-orient: horizontal;*/
-/*}*/
-
-/*.r {*/
-  /*background: hotpink;*/
-  /*width: 100px;*/
-  /*-ms-flex: 0 100px;*/
-  /*-webkit-box-flex:  0;*/
-  /*-moz-box-flex:  0;*/
-  /*-ms-box-flex:  0;*/
-  /*box-flex:  0;*/
-/*}*/
-
-
-/*.l {*/
-  /*background: aliceblue;*/
-  /*-ms-flex: 1;*/
-  /*-webkit-box-flex: 1;*/
-  /*-moz-box-flex: 1;*/
-  /*-ms-box-flex: 1;*/
-  /*box-flex: 1;*/
-/*}*/
-
-
-/*.App-header {*/
-/*height:276px;*/
-/*background: url("./assets/header_text.jpg");*/
-/*background-size: cover;*/
-/*background-position: center center;*/
-/*position: relative;*/
-/*vertical-align: top;*/
-/*}*/
+span {
+  color: #6fbee7;
+}

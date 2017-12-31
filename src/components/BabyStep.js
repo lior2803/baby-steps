@@ -5,23 +5,33 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Body from '../body.json';
 
-/*
- {
- "1": [],
- "2": [{
- "firstName": "Paul",
- "lastName": "Taylor"
- }],
- "3": [{
- "firstName": "Thomas",
- "lastName": "Harris"
- }, {
- "firstName": "Sharon",
- "lastName": "Thomas"
- }]
- }
- */
-
+function FriendsList(props) {
+    var friendsInStep = props.list[props.num];
+    var friendsInStepStr = "";
+    var alsoInStr = "";
+    if (friendsInStep.length === 1){
+        friendsInStepStr += friendsInStep[0].firstName + " " + friendsInStep[0].lastName;
+        alsoInStr += " is also in Baby Step " + props.num;
+    } else if (friendsInStep.length === 2){
+        friendsInStepStr += friendsInStep[0].firstName + " " + friendsInStep[0].lastName + " and ";
+        friendsInStepStr += friendsInStep[1].firstName + " " + friendsInStep[1].lastName;
+        alsoInStr += " are also in Baby Step " + props.num;
+    } else if (friendsInStep.length > 2){
+        friendsInStepStr += friendsInStep[0].firstName + " " + friendsInStep[0].lastName + ", ";
+        friendsInStepStr += friendsInStep[1].firstName + " " + friendsInStep[1].lastName;
+        alsoInStr += " and " + (friendsInStep.length - 2);
+        alsoInStr += (friendsInStep.length-2 === 1) ? " other friend are also in Baby Step " + props.num : " other friends are also in Baby Step " + props.num;
+    }
+    return (
+        <div>
+            {friendsInStepStr &&
+            <p>
+                <span>{friendsInStepStr}</span>{alsoInStr}
+            </p>
+            }
+        </div>
+    )
+}
 
 function Step(props) {
     var paragraphs = Body[props.num].split('<p>');
@@ -30,19 +40,6 @@ function Step(props) {
             {paragraphs.map(function (p, index) {
                 return(
                     <p key={index}>{p}</p>
-                )
-            })}
-        </div>
-    )
-}
-
-function FriendsList(props) {
-    var friendsInStep = props.list[props.num];
-    return (
-        <div>
-            {friendsInStep.map(function (friend, index) {
-                return(
-                    <p key={index}>{friend.firstName + " " + friend.lastName + ", "}</p>
                 )
             })}
         </div>

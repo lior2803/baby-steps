@@ -28,18 +28,6 @@ class App extends Component {
           </div>
         </BrowserRouter>
     );
-
-      // return(
-      //     <BrowserRouter>
-      //         <div>
-      //             <header className="header"/>
-      //             <div className="container">
-      //                 <Nav />
-      //                 <div className="baby-step-div">Baby Step</div>
-      //             </div>
-      //         </div>
-      //     </BrowserRouter>
-      // )
   }
 }
 
