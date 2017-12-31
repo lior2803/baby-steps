@@ -28,22 +28,24 @@ class Nav extends Component{
     render() {
         var steps = [1, 2, 3, 4, 5, 6, 7];
         return (
-            <ul className="nav">
-                {steps.map(function (i) {
-                    var icon = require('../assets/icons/icons_small_bs' + i + '.png');
-                    if (this.state.selectedStep === i){
-                        icon = require('../assets/icons/icons_small_bs' + i + '_blue.png');
-                    }
-                    return (
-                        <li key={i} onClick={this.updateStep.bind(this, i)}>
-                            <NavLink exact activeClassName='active' to={'/step' + i}>
-                                Baby Step {i}
-                                <img src={icon} alt="TBC"/>
-                            </NavLink>
-                        </li>
-                    )
-                }, this)}
-            </ul>
+            <div className="nav-div">
+                <ul>
+                    {steps.map(function (i) {
+                        var icon = require('../assets/icons/icons_small_bs' + i + '.png');
+                        if (this.state.selectedStep === i){
+                            icon = require('../assets/icons/icons_small_bs' + i + '_blue.png');
+                        }
+                        return (
+                            <li key={i} onClick={this.updateStep.bind(this, i)}>
+                                <NavLink exact activeClassName='active' to={i===1? '/' : '/step' + i}>
+                                    Baby Step {i}
+                                    <img className="nav-img" src={icon} alt="nav-icon"/>
+                                </NavLink>
+                            </li>
+                        )
+                    }, this)}
+                </ul>
+            </div>
         )
     }
 };
